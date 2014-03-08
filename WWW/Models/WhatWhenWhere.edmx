@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WhatWhenWhereModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="events">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sponsor" Type="nvarchar(max)" />
+          <Property Name="NameOfEvent" Type="nvarchar(max)" />
+          <Property Name="StartDate" Type="nvarchar(max)" />
+          <Property Name="EndDate" Type="nvarchar(max)" />
+          <Property Name="EventSite" Type="nvarchar(max)" />
+          <Property Name="EventAddress" Type="nvarchar(max)" />
+          <Property Name="RoomNights" Type="nvarchar(max)" />
+          <Property Name="Attendance" Type="nvarchar(max)" />
+          <Property Name="HQHotel" Type="nvarchar(max)" />
+          <Property Name="HotelAddress" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Time" Type="nvarchar(max)" />
+          <Property Name="ContactPhone" Type="nvarchar(max)" />
+          <Property Name="ContactEmail" Type="nvarchar(max)" />
+          <Property Name="User_ID" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="WhatWhenWhereModelStoreContainer">
+          <EntitySet Name="events" EntityType="Self.events" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WhatWhenWhereModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="event">
+          <Key>
+            <PropertyRef Name="eventId" />
+          </Key>
+          <Property Name="eventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sponsor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NameOfEvent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EndDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EventSite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EventAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RoomNights" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Attendance" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HQHotel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HotelAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="User_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="WhatWhenWhereEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="events" EntityType="Self.event" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WhatWhenWhereModelStoreContainer" CdmEntityContainer="WhatWhenWhereEntities">
+          <EntitySetMapping Name="events">
+            <EntityTypeMapping TypeName="WhatWhenWhereModel.event">
+              <MappingFragment StoreEntitySet="events">
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
+                <ScalarProperty Name="Sponsor" ColumnName="Sponsor" />
+                <ScalarProperty Name="NameOfEvent" ColumnName="NameOfEvent" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="EventSite" ColumnName="EventSite" />
+                <ScalarProperty Name="EventAddress" ColumnName="EventAddress" />
+                <ScalarProperty Name="RoomNights" ColumnName="RoomNights" />
+                <ScalarProperty Name="Attendance" ColumnName="Attendance" />
+                <ScalarProperty Name="HQHotel" ColumnName="HQHotel" />
+                <ScalarProperty Name="HotelAddress" ColumnName="HotelAddress" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
